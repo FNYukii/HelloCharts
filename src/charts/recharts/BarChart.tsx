@@ -1,6 +1,6 @@
 import {
   Bar,
-  BarChart,
+  BarChart as RCBarchart,
   CartesianGrid,
   ResponsiveContainer,
   XAxis,
@@ -35,13 +35,13 @@ const TEMPERATURE_RECORDS = [
   },
 ] as const
 
-export const BarChartSection = () => (
+export const BarChart = () => (
   <section className="mt-4">
     <h2 className="text-xl">Bar Chart / 棒グラフ</h2>
 
     <div className={clsx('h-80 aspect-video', 'border border-neutral-400')}>
       <ResponsiveContainer>
-        <BarChart data={TEMPERATURE_RECORDS}>
+        <RCBarchart data={TEMPERATURE_RECORDS}>
           <CartesianGrid
             strokeDasharray="3 3"
             stroke="var(--color-neutral-300)"
@@ -55,7 +55,7 @@ export const BarChartSection = () => (
             fill="var(--color-blue-500)"
             barSize={40}
           />
-        </BarChart>
+        </RCBarchart>
       </ResponsiveContainer>
     </div>
   </section>

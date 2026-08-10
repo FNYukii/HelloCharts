@@ -1,12 +1,11 @@
-import { BarChartSection } from './charts/recharts/BarChartSection'
-import { LineChartSection } from './charts/recharts/LineChartSection'
-import { PieChartSection } from './charts/recharts/PieChartSection'
-import { RadarChartSection } from './charts/recharts/RadarChartSection'
-import { ScatterChartSection } from './charts/recharts/ScatterChartSection'
-import { WaveformChartSection } from './charts/recharts/WaveformChartSection'
-import { AudioSpectramSection } from './charts/others/AudioSpectrumSection'
-import { FrequencySpectrumSection } from './charts/others/FrequencySpectrumSection'
-import { LiveAudioSpectrumSection } from './charts/others/LiveAudioSpectrumSection'
+import { BarChart } from './charts/recharts/BarChart'
+import { LineChart } from './charts/recharts/LineChart'
+import { PieChart } from './charts/recharts/PieChart'
+import { RadarChart } from './charts/recharts/RadarChart'
+import { ScatterChart } from './charts/recharts/ScatterChart'
+import { LineWaveformChart } from './charts/recharts/LineWaveformChart'
+import { LiveFrequencySpectrum } from './charts/canvas/LiveFrequencySpectrum'
+import { LiveBarWaveformChart } from './charts/canvas/LiveBarWaveformChart'
 
 export const App = () => {
   return (
@@ -14,17 +13,15 @@ export const App = () => {
       <h1 className="text-3xl">HelloCharts</h1>
 
       <div className="flex flex-wrap gap-8">
-        <LineChartSection />
-        <BarChartSection />
-        <RadarChartSection />
-        <PieChartSection />
-        <ScatterChartSection />
+        <LineChart />
+        <BarChart />
+        <RadarChart />
+        <PieChart />
+        <ScatterChart />
+        <LineWaveformChart />
 
-        <WaveformChartSection />
-        <AudioSpectramSection />
-        <FrequencySpectrumSection />
-
-        <LiveAudioSpectrumSection />
+        <LiveBarWaveformChart />
+        <LiveFrequencySpectrum />
       </div>
     </div>
   )

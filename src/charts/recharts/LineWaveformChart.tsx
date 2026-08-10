@@ -91,10 +91,10 @@ const WAVE_RECORDS = [
   { time: 15.0, gal: 0.0 },
 ] as const
 
-export const WaveformChartSection = () => {
+export const LineWaveformChart = () => {
   return (
     <section className="mt-4">
-      <h2 className="text-xl">Waveform Chart / 波形グラフ</h2>
+      <h2 className="text-xl">Line Waveform Chart / 折れ線波形グラフ</h2>
 
       <div className={clsx('h-80 aspect-video', 'border border-neutral-400')}>
         <ResponsiveContainer>

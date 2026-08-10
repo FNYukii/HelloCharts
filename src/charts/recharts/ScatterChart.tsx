@@ -2,7 +2,7 @@ import {
   CartesianGrid,
   ResponsiveContainer,
   Scatter,
-  ScatterChart,
+  ScatterChart as RCScatterChart,
   XAxis,
   YAxis,
 } from 'recharts'
@@ -20,13 +20,13 @@ const HEIGHT_AND_WEIGHT_RECORDS = [
   { name: 'Haruto', height: 164, weight: 45 },
 ] as const
 
-export const ScatterChartSection = () => (
+export const ScatterChart = () => (
   <section className="mt-4">
     <h2 className="text-xl">Scatter Chart / 散布図</h2>
 
     <div className={clsx('h-80 aspect-video', 'border border-neutral-400')}>
       <ResponsiveContainer>
-        <ScatterChart>
+        <RCScatterChart>
           <CartesianGrid
             strokeDasharray="3 3"
             stroke="var(--color-neutral-300)"
@@ -44,7 +44,7 @@ export const ScatterChartSection = () => (
             data={HEIGHT_AND_WEIGHT_RECORDS}
             fill="var(--color-blue-500)"
           />
-        </ScatterChart>
+        </RCScatterChart>
       </ResponsiveContainer>
     </div>
   </section>

@@ -3,7 +3,7 @@ import {
   PolarGrid,
   PolarRadiusAxis,
   Radar,
-  RadarChart,
+  RadarChart as RCRadarChart,
   ResponsiveContainer,
 } from 'recharts'
 import clsx from 'clsx'
@@ -31,13 +31,13 @@ const SKILL_LEVEL_RECORDS = [
   },
 ] as const
 
-export const RadarChartSection = () => (
+export const RadarChart = () => (
   <section className="mt-4">
     <h2 className="text-xl">Radar Chart / レーダーチャート</h2>
 
     <div className={clsx('h-80 aspect-video', 'border border-neutral-400')}>
       <ResponsiveContainer>
-        <RadarChart data={SKILL_LEVEL_RECORDS}>
+        <RCRadarChart data={SKILL_LEVEL_RECORDS}>
           <PolarGrid stroke="var(--color-neutral-300)" />
           <PolarAngleAxis dataKey="name" stroke="var(--color-neutral-400)" />
           <PolarRadiusAxis stroke="var(--color-neutral-300)" />
@@ -49,7 +49,7 @@ export const RadarChartSection = () => (
             fillOpacity={0.4}
             activeDot={false}
           />
-        </RadarChart>
+        </RCRadarChart>
       </ResponsiveContainer>
     </div>
   </section>

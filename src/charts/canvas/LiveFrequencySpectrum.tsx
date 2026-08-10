@@ -4,7 +4,7 @@ import React, { useRef, useEffect } from 'react'
 const BAR_COUNT = 32
 const BARS_GAP = 3
 
-export const FrequencySpectrumSection: React.FC = () => {
+export const LiveFrequencySpectrum: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null)
 
   useEffect(() => {
@@ -62,7 +62,9 @@ export const FrequencySpectrumSection: React.FC = () => {
 
   return (
     <section className="mt-4">
-      <h2 className="text-xl">Frequency Spectrum / 周波数スペクトラム</h2>
+      <h2 className="text-xl">
+        Live Frequency Spectrum / ライブ周波数スペクトラム
+      </h2>
 
       <div
         className={clsx(

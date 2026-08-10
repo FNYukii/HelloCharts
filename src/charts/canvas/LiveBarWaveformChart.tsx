@@ -1,7 +1,11 @@
 import clsx from 'clsx'
 import { useEffect, useRef } from 'react'
 
-export const LiveAudioSpectrumSection = () => {
+const SPEED = 0.4 // 流れるスピード（px/frame）
+const BAR_WIDTH = 1 // 各バーの幅（px）
+const BAR_GAP = 1 // バー同士の間隔（px）
+
+export const LiveBarWaveformChart = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null)
 
   useEffect(() => {
@@ -19,11 +23,7 @@ export const LiveAudioSpectrumSection = () => {
       }
     }
 
-    // 設定値
-    const SPEED = 0.4 // 流れるスピード（px/frame）
-    const BAR_WIDTH = 1 // 各バーの幅（px）
-    const BAR_GAP = 1 // バー同士の間隔（px）
-
+    // 設定値取得
     const step = BAR_WIDTH + BAR_GAP
     const maxBars = Math.ceil(canvas.width / step) + 5 // 画面幅に必要なバーの数
 
@@ -85,7 +85,7 @@ export const LiveAudioSpectrumSection = () => {
 
   return (
     <section className="mt-4">
-      <h2 className="text-xl">ライブオーディオスペクトラム</h2>
+      <h2 className="text-xl">Live Bar Waveform Chart / ライブ棒波形グラフ</h2>
 
       <div className={clsx('h-80 aspect-video', 'border border-neutral-400')}>
         <canvas ref={canvasRef} className="size-full" />

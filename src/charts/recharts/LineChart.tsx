@@ -1,7 +1,7 @@
 import {
   CartesianGrid,
   Line,
-  LineChart,
+  LineChart as RCLineChart,
   ResponsiveContainer,
   XAxis,
   YAxis,
@@ -35,13 +35,13 @@ const TEMPERATURE_RECORDS = [
   },
 ] as const
 
-export const LineChartSection = () => (
+export const LineChart = () => (
   <section className="mt-4">
     <h2 className="text-xl">Line Chart / 折れ線グラフ</h2>
 
     <div className={clsx('h-80 aspect-video', 'border border-neutral-400')}>
       <ResponsiveContainer>
-        <LineChart data={TEMPERATURE_RECORDS}>
+        <RCLineChart data={TEMPERATURE_RECORDS}>
           <CartesianGrid
             strokeDasharray="3 3"
             stroke="var(--color-neutral-300)"
@@ -55,7 +55,7 @@ export const LineChartSection = () => (
             stroke="var(--color-blue-500)"
             activeDot={false}
           />
-        </LineChart>
+        </RCLineChart>
       </ResponsiveContainer>
     </div>
   </section>

@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import { ResponsiveContainer, PieChart, Pie } from 'recharts'
+import { ResponsiveContainer, PieChart as RCPieChart, Pie } from 'recharts'
 
 const PRODUCT_SHARE_RECORDS = [
   { name: 'a', value: 60 },
@@ -8,14 +8,14 @@ const PRODUCT_SHARE_RECORDS = [
   { name: 'd', value: 5 },
 ] as const
 
-export const PieChartSection = () => {
+export const PieChart = () => {
   return (
     <section className="mt-4">
       <h2 className="text-xl">Pie Chart / 円グラフ</h2>
 
       <div className={clsx('h-80 aspect-square', 'border border-neutral-400')}>
         <ResponsiveContainer>
-          <PieChart>
+          <RCPieChart>
             <Pie
               data={PRODUCT_SHARE_RECORDS}
               dataKey="value"
@@ -23,7 +23,7 @@ export const PieChartSection = () => {
               fill="var(--color-blue-500)"
               label
             />
-          </PieChart>
+          </RCPieChart>
         </ResponsiveContainer>
       </div>
     </section>
