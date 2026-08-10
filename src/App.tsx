@@ -4,7 +4,7 @@ import { PieChartSection } from './charts/recharts/PieChartSection'
 import { RadarChartSection } from './charts/recharts/RadarChartSection'
 import { ScatterChartSection } from './charts/recharts/ScatterChartSection'
 import { WaveformChartSection } from './charts/recharts/WaveformChartSection'
-import { WaveformChartSection2 } from './charts/others/WaveformPlayer'
+import { WaveformChartSection2 } from './charts/others/WaveformChartSection2'
 
 export const App = () => {
   return (
