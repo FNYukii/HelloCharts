@@ -1,6 +1,7 @@
 import { BarChartSection } from './components/BarChartSection'
 import { LineChartSection } from './components/LineChartSection'
 import { PieChartSection } from './components/PieChartSection'
+import { RadarChartSection } from './components/RadarChartSection'
 
 export const App = () => {
   return (
@@ -10,6 +11,7 @@ export const App = () => {
       <LineChartSection />
       <BarChartSection />
       <PieChartSection />
+      <RadarChartSection />
     </div>
   )
 }

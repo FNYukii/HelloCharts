@@ -13,7 +13,7 @@ export const PieChartSection = () => {
     <section className="mt-4">
       <h2 className="text-xl">Pie Chart</h2>
 
-      <div className={clsx('w-80 aspect-square', 'border border-neutral-300')}>
+      <div className={clsx('w-80 aspect-square', 'border border-neutral-400')}>
         <ResponsiveContainer>
           <PieChart>
             <Pie
