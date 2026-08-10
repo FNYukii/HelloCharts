@@ -1,9 +1,9 @@
 import { useEffect, useRef } from 'react'
 import WaveSurfer from 'wavesurfer.js'
-import audioUrl from '../assets/wind.wav'
+import audioUrl from '../../assets/wind.wav'
 import clsx from 'clsx'
 
-export const WaveformPlayer = () => {
+export const SoundPlayer = () => {
   const containerRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {

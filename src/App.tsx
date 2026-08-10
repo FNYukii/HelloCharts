@@ -1,10 +1,10 @@
-import { BarChartSection } from './components/BarChartSection'
-import { LineChartSection } from './components/LineChartSection'
-import { PieChartSection } from './components/PieChartSection'
-import { RadarChartSection } from './components/RadarChartSection'
-import { ScatterChartSection } from './components/ScatterChartSection'
-import { WaveformChartSection } from './components/WaveformChartSection'
-import { WaveformPlayer } from './components/WaveformPlayer'
+import { BarChartSection } from './charts/recharts/BarChartSection'
+import { LineChartSection } from './charts/recharts/LineChartSection'
+import { PieChartSection } from './charts/recharts/PieChartSection'
+import { RadarChartSection } from './charts/recharts/RadarChartSection'
+import { ScatterChartSection } from './charts/recharts/ScatterChartSection'
+import { WaveformChartSection } from './charts/recharts/WaveformChartSection'
+import { SoundPlayer } from './charts/others/WaveformPlayer'
 
 export const App = () => {
   return (
@@ -19,7 +19,7 @@ export const App = () => {
         <ScatterChartSection />
         <WaveformChartSection />
 
-        <WaveformPlayer />
+        <SoundPlayer />
       </div>
     </div>
   )
