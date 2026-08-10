@@ -1,8 +1,13 @@
 import clsx from 'clsx'
 import { useEffect, useRef } from 'react'
 
-const SPEED = 0.4 // 流れるスピード（px/frame）
-const BAR_WIDTH = 1 // 各バーの幅（px）
+const getRandomNum = (min: number, max: number) => {
+  const randomNum = Math.random() * (max - min) + min
+  return Math.floor(randomNum * 100) / 100
+}
+
+const SPEED = 0.6 // 流れるスピード（px/frame）
+const BAR_WIDTH = 1.5 // 各バーの幅（px）
 const BAR_GAP = 1 // バー同士の間隔（px）
 
 export const LiveBarWaveformChart = () => {
@@ -14,7 +19,7 @@ export const LiveBarWaveformChart = () => {
     const ctx = canvas.getContext('2d')
     if (!ctx) return
 
-    // キャンバスのサイズを親要素に合わせる（1倍固定）
+    // キャンバスのサイズを親要素に合わせる （1倍固定）
     const resizeCanvas = () => {
       const rect = canvas.parentElement?.getBoundingClientRect()
       if (rect) {
@@ -22,47 +27,47 @@ export const LiveBarWaveformChart = () => {
         canvas.height = rect.height // 親要素の高さをそのまま使用
       }
     }
+    resizeCanvas()
 
     // 設定値取得
     const step = BAR_WIDTH + BAR_GAP
-    const maxBars = Math.ceil(canvas.width / step) + 5 // 画面幅に必要なバーの数
+    const maxBarCount = Math.ceil(canvas.width / step) + 5 // 画面幅に必要なバーの数
 
-    // 波形データ（振幅 0.0〜1.0）
-    const data: number[] = Array.from(
-      { length: maxBars },
-      () => Math.random() * 0.15 + 0.05,
+    // 振幅データ
+    const amplitudes: number[] = Array.from({ length: maxBarCount }, () =>
+      getRandomNum(0.05, 0.2),
     )
 
-    let animationFrameId: number
-    let offsetX = 0 // アニメーション用オフセット
+    let frameId: number
+    let animationOffsetX = 0 // アニメーション用オフセット
 
     // 描画関数
     const render = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height)
 
-      // オフセットの更新
-      offsetX += SPEED
+      // SPEED分オフセットを増加
+      animationOffsetX += SPEED
 
-      // 1バー分（step）移動したら、一番古いデータを消して新しいデータを追加
-      if (offsetX >= step) {
-        offsetX -= step
-        data.shift()
+      // 1バー分（step）移動したら、一番古い要素を消して新しい要素を追加
+      if (animationOffsetX >= step) {
+        animationOffsetX -= step
+        amplitudes.shift()
 
-        // 地震のようなノイズ波形（たまに大きな振幅を発生させる）
-        const isSpike = Math.random() < 0.05
+        // 新しい振幅を生成
+        const isSpike = getRandomNum(0, 10) > 9
         const newAmplitude = isSpike
-          ? Math.random() * 0.8 + 0.2 // スパイク（強い揺れ）
-          : Math.random() * 0.15 + 0.05 // 平常時（微小な揺れ）
+          ? getRandomNum(0.2, 1)
+          : getRandomNum(0.05, 0.2)
 
-        data.push(newAmplitude)
+        amplitudes.push(newAmplitude)
       }
 
-      // 上下対称のバーを描画
-      for (let i = 0; i < data.length; i++) {
-        const amplitude = data[i]
-        const barHeight = amplitude * (canvas.height * 0.8) // 画面高さに対する割合
+      // 各バーを上下対照に描画
+      for (let i = 0; i < amplitudes.length; i++) {
+        const amplitude = amplitudes[i]
+        const barHeight = amplitude * canvas.height
 
-        const x = i * step - offsetX
+        const x = i * step - animationOffsetX
         const centerY = canvas.height / 2
         const y = centerY - barHeight / 2
 
@@ -71,7 +76,7 @@ export const LiveBarWaveformChart = () => {
       }
 
       // 次回の描画を予約
-      animationFrameId = requestAnimationFrame(render)
+      frameId = requestAnimationFrame(render)
     }
 
     // 描画関数実行
@@ -79,7 +84,7 @@ export const LiveBarWaveformChart = () => {
 
     return () => {
       window.removeEventListener('resize', resizeCanvas)
-      cancelAnimationFrame(animationFrameId)
+      cancelAnimationFrame(frameId)
     }
   }, [])
 
