@@ -1,11 +1,13 @@
-import { TemperatureChart } from './components/TemperatureChart'
+import { BarChartSection } from './components/BarChartSection'
+import { LineChartSection } from './components/LineChartSection'
 
 export const App = () => {
   return (
-    <div className="p-4">
+    <div className="pt-4 px-4 pb-16">
       <h1 className="text-2xl">HelloCharts</h1>
 
-      <TemperatureChart />
+      <LineChartSection />
+      <BarChartSection />
     </div>
   )
 }

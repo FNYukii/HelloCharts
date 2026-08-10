@@ -9,7 +9,7 @@ import {
 import { temperatureRecords } from '../constants/temperatureRecords'
 import clsx from 'clsx'
 
-export const TemperatureChart = () => (
+export const LineChartSection = () => (
   <section className="mt-4">
     <h2 className="text-xl">Line Chart</h2>
 
