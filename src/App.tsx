@@ -4,7 +4,7 @@ import { PieChartSection } from './charts/recharts/PieChartSection'
 import { RadarChartSection } from './charts/recharts/RadarChartSection'
 import { ScatterChartSection } from './charts/recharts/ScatterChartSection'
 import { WaveformChartSection } from './charts/recharts/WaveformChartSection'
-import { SoundPlayer } from './charts/others/WaveformPlayer'
+import { WaveformChartSection2 } from './charts/others/WaveformPlayer'
 
 export const App = () => {
   return (
@@ -18,8 +18,7 @@ export const App = () => {
         <PieChartSection />
         <ScatterChartSection />
         <WaveformChartSection />
-
-        <SoundPlayer />
+        <WaveformChartSection2 />
       </div>
     </div>
   )
