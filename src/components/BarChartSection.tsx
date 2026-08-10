@@ -47,8 +47,8 @@ export const BarChartSection = () => (
             stroke="var(--color-neutral-300)"
           />
 
-          <XAxis dataKey="date" stroke="var(--color-neutral-500)" />
-          <YAxis dataKey="temperature" stroke="var(--color-neutral-500)" />
+          <XAxis dataKey="date" stroke="var(--color-neutral-400)" />
+          <YAxis dataKey="temperature" stroke="var(--color-neutral-400)" />
 
           <Bar
             dataKey="temperature"
