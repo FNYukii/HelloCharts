@@ -27,7 +27,7 @@ export const WaveformChartSection2 = () => {
 
   return (
     <section className="mt-4">
-      <h2 className="text-xl">Waveform Chart / 波系グラフ 2</h2>
+      <h2 className="text-xl">Waveform Chart / 波形グラフ 2</h2>
 
       <div
         className={clsx(

@@ -94,7 +94,7 @@ const WAVE_RECORDS = [
 export const WaveformChartSection = () => {
   return (
     <section className="mt-4">
-      <h2 className="text-xl">Waveform Chart / 波系グラフ</h2>
+      <h2 className="text-xl">Waveform Chart / 波形グラフ</h2>
 
       <div className={clsx('h-80 aspect-video', 'border border-neutral-400')}>
         <ResponsiveContainer>
