@@ -6,8 +6,34 @@ import {
   XAxis,
   YAxis,
 } from 'recharts'
-import { temperatureRecords } from '../constants/temperatureRecords'
 import clsx from 'clsx'
+
+const TEMPERATURE_RECORDS = [
+  {
+    date: '08/01',
+    temperature: 25,
+  },
+  {
+    date: '08/02',
+    temperature: 25,
+  },
+  {
+    date: '08/03',
+    temperature: 26,
+  },
+  {
+    date: '08/04',
+    temperature: 27,
+  },
+  {
+    date: '08/05',
+    temperature: 28,
+  },
+  {
+    date: '08/06',
+    temperature: 30,
+  },
+] as const
 
 export const LineChartSection = () => (
   <section className="mt-4">
@@ -15,7 +41,7 @@ export const LineChartSection = () => (
 
     <div className={clsx('w-160 aspect-video', 'border border-neutral-400')}>
       <ResponsiveContainer>
-        <LineChart data={temperatureRecords}>
+        <LineChart data={TEMPERATURE_RECORDS}>
           <CartesianGrid
             strokeDasharray="3 3"
             stroke="var(--color-neutral-300)"
