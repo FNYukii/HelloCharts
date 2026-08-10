@@ -6,6 +6,7 @@ import { ScatterChart } from './charts/recharts/ScatterChart'
 import { LineWaveformChart } from './charts/recharts/LineWaveformChart'
 import { LiveFrequencySpectrum } from './charts/canvas/LiveFrequencySpectrum'
 import { LiveBarWaveformChart } from './charts/canvas/LiveBarWaveformChart'
+import { SunburstChart } from './charts/recharts/SunburstChart'
 
 export const App = () => {
   return (
@@ -18,6 +19,7 @@ export const App = () => {
         <RadarChart />
         <PieChart />
         <ScatterChart />
+        <SunburstChart />
         <LineWaveformChart />
 
         <LiveBarWaveformChart />
