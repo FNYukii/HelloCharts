@@ -3,7 +3,7 @@ import WaveSurfer from 'wavesurfer.js'
 import audioUrl from '../../assets/wind.wav'
 import clsx from 'clsx'
 
-export const WaveformChartSection2 = () => {
+export const AudioSpectramSection = () => {
   const containerRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
@@ -27,7 +27,7 @@ export const WaveformChartSection2 = () => {
 
   return (
     <section className="mt-4">
-      <h2 className="text-xl">Waveform Chart / 波形グラフ 2</h2>
+      <h2 className="text-xl">Audio Spectrum / オーディオスペクトラム</h2>
 
       <div
         className={clsx(
