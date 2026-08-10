@@ -5,6 +5,7 @@ import { RadarChartSection } from './charts/recharts/RadarChartSection'
 import { ScatterChartSection } from './charts/recharts/ScatterChartSection'
 import { WaveformChartSection } from './charts/recharts/WaveformChartSection'
 import { WaveformChartSection2 } from './charts/others/WaveformChartSection2'
+import { FrequencySpectrumSection } from './charts/others/FrequencySpectrum'
 
 export const App = () => {
   return (
@@ -17,8 +18,10 @@ export const App = () => {
         <RadarChartSection />
         <PieChartSection />
         <ScatterChartSection />
+
         <WaveformChartSection />
         <WaveformChartSection2 />
+        <FrequencySpectrumSection />
       </div>
     </div>
   )
