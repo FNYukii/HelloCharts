@@ -6,6 +6,7 @@ import { ScatterChartSection } from './charts/recharts/ScatterChartSection'
 import { WaveformChartSection } from './charts/recharts/WaveformChartSection'
 import { AudioSpectramSection } from './charts/others/AudioSpectrumSection'
 import { FrequencySpectrumSection } from './charts/others/FrequencySpectrumSection'
+import { LiveAudioSpectrumSection } from './charts/others/LiveAudioSpectrumSection'
 
 export const App = () => {
   return (
@@ -22,6 +23,8 @@ export const App = () => {
         <WaveformChartSection />
         <AudioSpectramSection />
         <FrequencySpectrumSection />
+
+        <LiveAudioSpectrumSection />
       </div>
     </div>
   )
