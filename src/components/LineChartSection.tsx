@@ -37,9 +37,9 @@ const TEMPERATURE_RECORDS = [
 
 export const LineChartSection = () => (
   <section className="mt-4">
-    <h2 className="text-xl">Line Chart</h2>
+    <h2 className="text-xl">Line Chart / 折れ線グラフ</h2>
 
-    <div className={clsx('w-160 aspect-video', 'border border-neutral-400')}>
+    <div className={clsx('h-80 aspect-video', 'border border-neutral-400')}>
       <ResponsiveContainer>
         <LineChart data={TEMPERATURE_RECORDS}>
           <CartesianGrid

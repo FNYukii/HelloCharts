@@ -37,9 +37,9 @@ const TEMPERATURE_RECORDS = [
 
 export const BarChartSection = () => (
   <section className="mt-4">
-    <h2 className="text-xl">Bar Chart</h2>
+    <h2 className="text-xl">Bar Chart / 棒グラフ</h2>
 
-    <div className={clsx('w-160 aspect-video', 'border border-neutral-400')}>
+    <div className={clsx('h-80 aspect-video', 'border border-neutral-400')}>
       <ResponsiveContainer>
         <BarChart data={TEMPERATURE_RECORDS}>
           <CartesianGrid

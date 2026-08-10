@@ -94,9 +94,9 @@ const WAVE_RECORDS = [
 export const WaveformChartSection = () => {
   return (
     <section className="mt-4">
-      <h2 className="text-xl">Waveform Chart</h2>
+      <h2 className="text-xl">Waveform Chart / 波系グラフ</h2>
 
-      <div className={clsx('w-160 aspect-video', 'border border-neutral-400')}>
+      <div className={clsx('h-80 aspect-video', 'border border-neutral-400')}>
         <ResponsiveContainer>
           <LineChart data={WAVE_RECORDS}>
             <CartesianGrid

@@ -11,9 +11,9 @@ const PRODUCT_SHARE_RECORDS = [
 export const PieChartSection = () => {
   return (
     <section className="mt-4">
-      <h2 className="text-xl">Pie Chart</h2>
+      <h2 className="text-xl">Pie Chart / 円グラフ</h2>
 
-      <div className={clsx('w-80 aspect-square', 'border border-neutral-400')}>
+      <div className={clsx('h-80 aspect-square', 'border border-neutral-400')}>
         <ResponsiveContainer>
           <PieChart>
             <Pie

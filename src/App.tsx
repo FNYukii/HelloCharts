@@ -10,12 +10,14 @@ export const App = () => {
     <div className="pt-4 px-4 pb-16">
       <h1 className="text-2xl">HelloCharts</h1>
 
-      <LineChartSection />
-      <BarChartSection />
-      <PieChartSection />
-      <RadarChartSection />
-      <ScatterChartSection />
-      <WaveformChartSection />
+      <div className="flex flex-wrap gap-8">
+        <LineChartSection />
+        <BarChartSection />
+        <RadarChartSection />
+        <PieChartSection />
+        <ScatterChartSection />
+        <WaveformChartSection />
+      </div>
     </div>
   )
 }

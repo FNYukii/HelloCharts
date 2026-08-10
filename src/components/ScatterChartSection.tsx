@@ -22,9 +22,9 @@ const HEIGHT_AND_WEIGHT_RECORDS = [
 
 export const ScatterChartSection = () => (
   <section className="mt-4">
-    <h2 className="text-xl">Scatter Chart</h2>
+    <h2 className="text-xl">Scatter Chart / 散布図</h2>
 
-    <div className={clsx('w-160 aspect-video', 'border border-neutral-400')}>
+    <div className={clsx('h-80 aspect-video', 'border border-neutral-400')}>
       <ResponsiveContainer>
         <ScatterChart>
           <CartesianGrid

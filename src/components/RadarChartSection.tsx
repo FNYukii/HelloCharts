@@ -33,9 +33,9 @@ const SKILL_LEVEL_RECORDS = [
 
 export const RadarChartSection = () => (
   <section className="mt-4">
-    <h2 className="text-xl">Radar Chart</h2>
+    <h2 className="text-xl">Radar Chart / レーダーチャート</h2>
 
-    <div className={clsx('w-160 aspect-video', 'border border-neutral-400')}>
+    <div className={clsx('h-80 aspect-video', 'border border-neutral-400')}>
       <ResponsiveContainer>
         <RadarChart data={SKILL_LEVEL_RECORDS}>
           <PolarGrid stroke="var(--color-neutral-300)" />
